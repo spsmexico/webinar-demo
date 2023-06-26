@@ -1,6 +1,6 @@
 # Proceso
 ### Funcionalidades nuevas
-- 
+- Se modificó el mensaje de la lambda
 
 ### Solución a problemas
 - 
