@@ -17,6 +17,9 @@ Parameters:
   ParametersKMSARN:
     Description: ARN de la llave que descifra los secretos
     Type: String
+  ParametersNAME:
+    Description: Nombre del parametro
+    Type: String
 
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
@@ -54,7 +57,7 @@ Resources:
       # Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         - AmazonS3ReadOnlyAccess # Managed Policy
         - SSMParameterReadPolicy: # SAM Policy https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html
-            ParameterName: /sps/parametro
+            ParameterName: !Ref ParametersNAME
         - DynamoDBCrudPolicy:
             TableName: !Sub sps-catalogo-ejemplo-${DBEnvName}
         - Statement: # Inline policy
