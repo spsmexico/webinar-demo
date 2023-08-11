@@ -91,6 +91,12 @@ permissions:
 
 jobs:
 
+  CreatePreRelease:
+    permissions: write-all
+    uses: spsmexico/webinar-demo/.github/workflows/reusable_create-pre-release.yml@main
+    with:
+      version: "0.0.1"
+
   Deploy:
 
     runs-on: ubuntu-20.04
